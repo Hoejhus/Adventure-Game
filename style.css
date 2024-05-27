@@ -19,20 +19,52 @@
   image-rendering: pixelated;
 }
 
-.tile.grass {
-  background-image: url("tiles/grass.png");
+body {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(90deg, rgb(156, 15, 15) 0%, rgb(206, 207, 141) 100%);
+}
+
+.tile.path {
+  background-image: url('tiles/path.png');
+}
+
+.tile.flower {
+  background-image: url('tiles/flowers.png');
 }
 
 .tile.wall {
-  background-image: url("tiles/wall.png");
+  background-image: url('tiles/wall.png');
 }
 
 .tile.water {
-  background-image: url("tiles/water.png");
+  background-image: url('tiles/water.png');
 }
 
 .tile.tree {
-  background-image: url("tiles/tree.png");
+  background-image: url('tiles/tree.png');
+}
+
+.tile.rock {
+  background-image: url('tiles/rock.png');
+}
+
+.tile.grass {
+  background-image: url('tiles/grass.png');
+}
+
+.tile.gate {
+  background-image: url('tiles/gate.png');
+}
+
+.tile.door {
+  background-image: url('tiles/door.png');
+}
+
+.tile.lava {
+  background-image: url('tiles/lava.png');
 }
 
 #characters {
@@ -95,7 +127,6 @@
 }
 
 
-
 @keyframes down {
   from {
     background-position: 0% 0%;
@@ -130,4 +161,13 @@
   to {
     background-position: -400% -100%;
   }
+}
+
+.show-hitbox::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(25, 194, 19);
+  width: var(--hitW);
+  height: var(--hitH);
+  translate: var(--hitX) var(--hitY);
 }
